@@ -1,11 +1,12 @@
 public class Cleric extends Character {
     // constructors
     public Cleric() {
-	setName("Robin Redstone");
-	setHP( (int)((Math.random() * 70) + 70 )); // [70,140)
+	setName("Robin of Redstone");
+	setHP( (int)((Math.random() * 100) + 70 )); // [70,170)
 	setStrength( (int)(Math.random() * 50) + 50 ); // [50,100)
 	setDefense( (int)(Math.random() * 30) + 20 ); // [20,50)
 	setAR( Math.random() );
+	setSpatt((int) ((Math.random() * 10) + 1)); // [1,11)
     }
 
     public Cleric( String n ) {
@@ -24,6 +25,9 @@ public class Cleric extends Character {
     public void specialize() {
 	setStrength( this.getStrength() + 10 );
 	setDefense( this.getDefense() - 10 );
+	if (Math.random() < .5) {
+	    setHP( hp + 15 );   //special powerup
+	}
     }
 
     public void normalize() {

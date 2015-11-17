@@ -70,18 +70,19 @@ public class YoRPG {
 	s += "\tMage\n";
 	s += "\tRogue\n";
 	s += "\tPaladin\n";
+	s += "\tCleric\n";
 	s += "Selection: ";
 	System.out.print( s );
 
 				
 	try {
 	    type = in.readLine();
-	    if (! (type.equals("Warrior") || type.equals("Mage") || type.equals("Paladin") || type.equals("Rogue"))) {
+	    if (! (type.equals("Warrior") || type.equals("Mage") || type.equals("Paladin") || type.equals("Rogue") || type.equals("Cleric") )) {
 		type = "Warrior";
-	    }
+		}
 	}
 	catch (IOException e ) { }
-				    
+	 
 
 	s = "Intrepid " + type + ", what doth thy call thyself? (State your name): ";
 	System.out.print( s );
@@ -93,16 +94,19 @@ public class YoRPG {
 
 	//instantiate the player's character
 	if (type.equals("Warrior")) {
-	      pat = new Warrior( name );
+	    pat = new Warrior( name );
 	}
 	else if (type.equals("Mage")) {
-	      pat = new Mage( name );
+	    pat = new Mage( name );
 	}
 	else if (type.equals("Paladin")) {
-	      pat = new Paladin( name );
+	    pat = new Paladin( name );
+	}
+	else if (type.equals("Rogue")) {
+	    pat = new Rogue( name );
 	}
 	else {
-	      pat = new Rogue( name );
+	    pat = new Cleric( name );
 	}
     }//end newGame()
 
