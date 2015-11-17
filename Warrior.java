@@ -1,9 +1,4 @@
-//Monochrome--Arpita Abrol, Shamaul Dilmohamed, Anna Tolen
-//APCS1 pd10
-//HW30 -- Ye Olde Role Playing Game, Expanded
-//2015-11-15
-
-public class Warrior extends Character{
+public class Warrior extends Character {
     
     // methods
     // constructors
@@ -13,7 +8,6 @@ public class Warrior extends Character{
         setStrength( (int)((Math.random() * 100) + 50 )); // [50,150)
         setDefense( (int)((Math.random() * 20) + 40 )); // [40,60)
         setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 10) + 1));
     }
     public Warrior( String n ) {
         this();
@@ -27,6 +21,20 @@ public class Warrior extends Character{
         setAR(a);
     }
 
+    public void specialize() {
+	setStrength( this.getStrength() + 15 );
+	setDefense( this.getDefense() - 15 );
+    }
+
+    public void normalize() {
+	setStrength( this.getStrength() - 15 );
+	setDefense( this.getDefense() + 15 );
+    }
+
+    public String about() {
+	String retStr = "WARRIOR:\tWarriors are a proud sort, noble in spirit and skilled in battle. They are highly proficient with short-range weapons (e.g. shortswords, longswords, broadswords, skinnyswords, axes, spears, javelins, ninja stars, lightsabres...). Normally equipped with heavy armor, which can inhibit their speed and agility. They fight for the honor of their kingdom and the good of their people.";
+	return retStr;
+    }
 }
 
     

@@ -1,9 +1,4 @@
-//Monochroms--Arpita Abrol, Shamaul Dilmohamed, Anna Tolen
-//APCS1 pd10
-//HW28 -- Ye Olde Role Playing Game
-//2015-11-12
-
-public class Monster extends Character{
+public class Monster extends Character {
 
 
     
@@ -36,7 +31,20 @@ public class Monster extends Character{
     	ar = newAR;
     }
 
+    public void specialize() {
+	setStrength( this.getStrength() + 15 );
+	setDefense( this.getDefense() - 15 );
+    }
     
+    public void normalize() {
+	setStrength( this.getStrength() - 15 );
+	setDefense( this.getDefense() + 15 );
+    }
+    
+    public String about() {
+	String retStr = "Monsters are scary, yo.";
+	return retStr;
+    }
 } // close class Monster
 
     

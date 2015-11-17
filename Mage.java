@@ -1,8 +1,3 @@
-//Monochrome--Arpita Abrol, Shamaul Dilmohamed, Anna Tolen
-//APCS1 pd10
-//HW30 -- Ye Olde Role Playing Game, Expanded
-//2015-11-15
-
 public class Mage extends Character {
 
     // methods
@@ -12,8 +7,8 @@ public class Mage extends Character {
         setHP( (int)((Math.random() * 100) + 30 )); // [30,130)
         setStrength( (int)((Math.random() * 100) + 80 )); // [80,180)
         setDefense( (int)((Math.random() * 20) + 30 )); // [30,50)
-        setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 30) + 1));
+        setAR( Math.random() ); // attack rating -- random probability for landing hits
+        //setSpatt((int)((Math.random() * 30) + 1));
     }
     public Mage( String n ) {
         this();
@@ -25,6 +20,22 @@ public class Mage extends Character {
         setStrength(s);
         setDefense(d);
         setAR(a);
+    }
+
+    // other methods
+    public void specialize() {
+	setStrength( strength + 30 );
+	setDefense( defense - 30 );
+    }
+
+    public void normalize() {
+	setStrength( strength - 30 );
+	setDefense( defense + 30 );
+    }
+
+    public String about() {
+	String retStr = "MAGE:\tMages are incredibly gifted, capable of casting spells and brewing potions using the forces of sorcery and witchcraft. Their knowledge of the magical ream makes them an asset whilst engaged in battle.\n";
+	return retStr;
     }
 
 }

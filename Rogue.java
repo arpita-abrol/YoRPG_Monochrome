@@ -1,9 +1,4 @@
-//Monochrome--Arpita Abrol, Shamaul Dilmohamed, Anna Tolen
-//APCS1 pd10
-//HW30 -- Ye Olde Role Playing Game, Expanded
-//2015-11-15
-
-public class Rogue extends Character{
+public class Rogue extends Character {
 
     // methods
     // constructors
@@ -13,12 +8,13 @@ public class Rogue extends Character{
         setStrength( (int)((Math.random() * 100) + 40 )); // [40,140)
         setDefense( (int)((Math.random() * 30) + 20 )); // [20,50)
         setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 15) + 1));
     }
+    
     public Rogue( String n ) {
         this();
         setName(n);
     }
+    
     public Rogue(String n, int h, int s, int d, double a) {
         this(n);
         setHP(h);
@@ -27,4 +23,18 @@ public class Rogue extends Character{
         setAR(a);
     }
 
+    public void specialize() {
+	setStrength( this.getStrength() + 15 );
+	setDefense( this.getDefense() - 15 );
+    }
+
+    public void normalize() {
+	setStrength( this.getStrength() - 15 );
+	setDefense( this.getDefense() + 15 );
+    }
+
+    public String about() {
+	String retStr = "ROGUE:\tRogues are stealthy and versatile, capable of acquiring valuable resources at a moment's notice. They are very crude and will take any means necessary to achieve their goal. They are often motivated by money, are swift, wear little to no armor, and are extremely skilled with knives and daggers.";
+	return retStr;
+    }
 }

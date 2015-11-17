@@ -1,8 +1,3 @@
-//Monochrome--Arpita Abrol, Shamaul Dilmohamed, Anna Tolen
-//APCS1 pd10
-//HW30 -- Ye Olde Role Playing Game, Expanded
-//2015-11-15
-
 public class Paladin extends Character {
 
     // methods
@@ -13,7 +8,7 @@ public class Paladin extends Character {
         setStrength( (int)((Math.random() * 100) + 75 )); // [75,175)
         setDefense( (int)((Math.random() * 30) + 15 )); // [15,45)
         setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 10) + 1));
+        // setSpatt((int) ((Math.random() * 10) + 1));
     }
     public Paladin( String n ) {
         this();
@@ -25,6 +20,22 @@ public class Paladin extends Character {
         setStrength(s);
         setDefense(d);
         setAR(a);
+    }
+
+    // other methods
+    public void specialize() {
+	setStrength( this.getStrength() + 10 );
+	setDefense( this.getDefense() - 10 );
+    }
+
+    public void normalize() {
+	setStrength( this.getStrength() - 10 );
+	setDefense( this.getDefense() - 10 );
+    }
+
+    public String about() {
+	String retStr = "PALADIN:\tPaladins are a very prestigious order, often having very close relationships with royalty and high-society figures. Their primary duty is to protect and keep danger far from those they are sworn to keep safe.";
+	return retStr;
     }
 
 }
