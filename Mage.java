@@ -27,4 +27,20 @@ public class Mage extends Character {
         setAR(a);
     }
 
+    public  String about() {
+	String retStr = "";
+	retStr += "MAGE: \tMages are a very gifted group of people, as they control the power to cast spells and create potions to their advantage. Their knowlege of the magical realm makes them a useful asset while engaged in battle. \n";
+	return retStr;
+    }
+
+    public void specialize() {
+    	setStrength( strength + spatt );
+	setDefense( defense - spatt );
+    }
+
+    public  void normalize() {
+	setStrength( strength - spatt );
+	setDefense( defense + spatt );
+    }
+
 }

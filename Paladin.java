@@ -27,5 +27,21 @@ public class Paladin extends Character {
         setAR(a);
     }
 
+    public String about() {
+	String retStr = "";
+	retStr += "PALADIN: \tPaladins are a very prestigious group, being extremely close to royalty in their social group. They fight to keep order in the kingdom and to maintain their positions as the king's right hand men. \n ";
+	return retStr;
+    }
+
+    public void specialize() {
+    	setStrength( strength + spatt );
+	setDefense( defense - spatt );
+    }
+
+    public  void normalize() {
+	setStrength( strength - spatt );
+	setDefense( defense + spatt );
+    }    
+
 }
 

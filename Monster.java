@@ -4,36 +4,32 @@
 //2015-11-12
 
 public class Monster extends Character{
-
-
     
     // methods
     // constructor 
     public Monster() {
-	    int randStrenf = (int)(Math.random() * 45 + 20); // random int [20,65)
-	    setStrength( randStrenf ); 
+	int randStrenf = (int)(Math.random() * 45 + 20); // random int [20,65)
+	setStrength( randStrenf ); 
 
-	    setHP( 150 );
-	    setDefense( 20 );
-	    setAR( 1 );
+	setHP( 150 );
+	setDefense( 20 );
+	setAR( 1 );
     }
 
-    
-    // mutators
-    public void setHP( int newHP ) {
-    	hp = newHP;
+    public String about() {
+	String retStr = "";
+	retStr += "MONSTER: \tMonsters are ruthless folk, who depend on their brute streghth alone to carry out attacks. They lack intelligence, and are single-minded in their endeavors. They strive to follow the commands and wishes of their masters. They are unplayable characters. \n";
+	return retStr;
     }
 
-    public void setStrength( int newStrength ) {
-    	strength = newStrength;
+    public void specialize() {
+    	setStrength( strength + spatt );
+	setDefense( defense - spatt );
     }
 
-    public void setDefense( int newDefense ) {
-    	defense = newDefense;
-    }
-
-    public void setAR( int newAR ) {
-    	ar = newAR;
+    public  void normalize() {
+	setStrength( strength - spatt );
+	setDefense( defense + spatt );
     }
 
     

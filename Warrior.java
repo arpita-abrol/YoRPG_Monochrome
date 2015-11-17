@@ -27,6 +27,22 @@ public class Warrior extends Character{
         setAR(a);
     }
 
+    public String about() {
+	String retStr = "";
+	retStr += "WARRIOR :\tWarriors are a proud sort, noble in spirit and skilled in battle. They have great proficiency with short-range weapons (e.g. shortswords, longswords, broadswords, axes, spears, ninja stars, lightsabers...). Normally equipped with heavy armor. They fight for the honor of their kingdom and the good of their people.\n";
+	return retStr;
+    }
+
+    public void specialize() {
+    	setStrength( strength + spatt );
+	setDefense( defense - spatt );
+    }
+
+    public  void normalize() {
+	setStrength( strength - spatt );
+	setDefense( defense + spatt );
+    }
+    
 }
 
     

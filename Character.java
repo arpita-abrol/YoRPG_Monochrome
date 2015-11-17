@@ -1,4 +1,4 @@
-public class Character {
+public abstract class Character {
 
     // attributes
     protected String name;
@@ -77,22 +77,9 @@ public class Character {
 	return damage;
     }
 
-    public void specialize() {
-	setStrength( strength + spatt );
-	setDefense( defense - spatt );
-    }
+    public abstract void specialize();
 
-    public void normalize() {
-	setStrength( strength - spatt );
-	setDefense( defense + spatt );
-    }
+    public abstract void normalize();
 
-    public static String about() {
-	String retStr = "";
-	retStr += "WARRIOR :\tWarriors are a proud sort, noble in spirit and skilled in battle. They have great proficiency with short-range weapons (e.g. shortswords, longswords, broadswords, axes, spears, ninja stars, lightsabers...). Normally equipped with heavy armor. They fight for the honor of their kingdom and the good of their people.\n";
-	retStr += "ROGUE :\tRogues are stealthy and versatile, capable of acquiring valuable resources at a moment's notice. They are very crude and will take any means necessary to get their goal. \n";
-	retStr += "PALADIN: \tPaladins are a very prestigious group, being extremely close to royalty in their social group. They fight to keep order in the kingdom and to maintain their positions as the king's right hand men. \n ";
-	retStr += "MAGE: \tMages are a very gifted group of people, as they control the power to cast spells and create potions to their advantage. Their knowlege of the magical realm makes them a useful asset while engaged in battle. \n";
-	return retStr;
-    }
+    public abstract String about();
 }

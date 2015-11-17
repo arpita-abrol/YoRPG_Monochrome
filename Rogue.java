@@ -27,4 +27,20 @@ public class Rogue extends Character{
         setAR(a);
     }
 
+    public String about() {
+	String retStr = "";
+	retStr += "ROGUE :\tRogues are stealthy and versatile, capable of acquiring valuable resources at a moment's notice. They are very crude and will take any means necessary to get their goal. \n";
+	return retStr;
+    }
+
+    public void specialize() {
+    	setStrength( strength + spatt );
+	setDefense( defense - spatt );
+    }
+
+    public  void normalize() {
+	setStrength( strength - spatt );
+	setDefense( defense + spatt );
+    }
+
 }
