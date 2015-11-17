@@ -77,9 +77,17 @@ public abstract class Character {
 	return damage;
     }
 
+<<<<<<< HEAD
     // abstract methods
     public abstract void specialize();
     public abstract void normalize();
     public abstract String about();
 
+=======
+    public abstract void specialize();
+
+    public abstract void normalize();
+
+    public abstract String about();
+>>>>>>> fb38cca0dbf606fb1736bcf7043a55e2b80031d8
 }
