@@ -9,11 +9,12 @@ public class Warrior extends Character{
     // constructors
     public Warrior() {
         setName("John Smith"); //random names yay
+        setName("Harper of Ridgewood"); //random names yay
         setHP( (int)((Math.random() * 100) + 50 )); // [50,150)
-        setStrength( (int)((Math.random() * 100) + 50 )); // [50,150)
-        setDefense( (int)((Math.random() * 20) + 40 )); // [40,60)
-        setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 10) + 1));
+        setStrength( (int)((Math.random() * 100) + 55 )); // [60,160)
+        setDefense( (int)((Math.random() * 30) + 15 )); // [15,45)
+        setAR( Math.random() - .1); // random probability for landing hits [-.1,.9)
+        setSpatt((int) ((Math.random() * 7) + 1)); // [1,8)
     }
     public Warrior( String n ) {
         this();
@@ -36,6 +37,9 @@ public class Warrior extends Character{
     public void specialize() {
     	setStrength( strength + spatt );
 	setDefense( defense - spatt );
+	if (Math.random() < .5) {
+	    setDefense( defense + 10 );   //special powerup
+	}
     }
 
     public  void normalize() {

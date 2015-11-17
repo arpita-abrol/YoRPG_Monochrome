@@ -8,12 +8,12 @@ public class Mage extends Character {
     // methods
     // constructors
     public Mage() {
-        setName("Merlin"); //random names yay
-        setHP( (int)((Math.random() * 100) + 30 )); // [30,130)
-        setStrength( (int)((Math.random() * 100) + 80 )); // [80,180)
-        setDefense( (int)((Math.random() * 20) + 30 )); // [30,50)
+        setName("Skyler of Woodbirch"); //random names yay
+        setHP( (int)((Math.random() * 100) + 50 )); // [50,150)
+        setStrength( (int)((Math.random() * 100) + 60 )); // [60,160)
+        setDefense( (int)((Math.random() * 30) + 5 )); // [5,35)
         setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 30) + 1));
+        setSpatt((int) ((Math.random() * 10) + 1)); // [1,11)
     }
     public Mage( String n ) {
         this();
@@ -36,9 +36,12 @@ public class Mage extends Character {
     public void specialize() {
     	setStrength( strength + spatt );
 	setDefense( defense - spatt );
+	if (Math.random() < .5) {  
+	    setHP( hp + 15 );   //special powerup
+	}
     }
 
-    public  void normalize() {
+    public void normalize() {
 	setStrength( strength - spatt );
 	setDefense( defense + spatt );
     }

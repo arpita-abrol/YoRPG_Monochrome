@@ -10,10 +10,10 @@ public class Paladin extends Character {
     public Paladin() {
         setName("Arthur Jones"); //random names yay
         setHP( (int)((Math.random() * 100) + 75 )); // [75,175)
-        setStrength( (int)((Math.random() * 100) + 75 )); // [75,175)
-        setDefense( (int)((Math.random() * 30) + 15 )); // [15,45)
+        setStrength( (int)((Math.random() * 100) + 65 )); // [65,165)
+        setDefense( (int)((Math.random() * 30) + 10 )); // [10,40)
         setAR( Math.random() ); // random probability for landing hits
-        setSpatt((int) ((Math.random() * 10) + 1));
+        setSpatt((int) ((Math.random() * 8) + 1)); //[1,9)
     }
     public Paladin( String n ) {
         this();
@@ -36,6 +36,9 @@ public class Paladin extends Character {
     public void specialize() {
     	setStrength( strength + spatt );
 	setDefense( defense - spatt );
+	if (Math.random() < .5) {
+	    setDefense( defense + 10 );   //special powerup
+	}
     }
 
     public  void normalize() {

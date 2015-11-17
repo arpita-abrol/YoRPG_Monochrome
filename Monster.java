@@ -8,12 +8,12 @@ public class Monster extends Character{
     // methods
     // constructor 
     public Monster() {
-	int randStrenf = (int)(Math.random() * 45 + 20); // random int [20,65)
-	setStrength( randStrenf ); 
-
-	setHP( 150 );
-	setDefense( 20 );
-	setAR( 1 );
+        setName("Harper of Ridgewood"); //random names yay
+        setHP( (int)((Math.random() * 100) + 50 )); // [50,150)
+        setStrength( (int)((Math.random() * 100) + 55 )); // [60,160)
+        setDefense( (int)((Math.random() * 30) + 15 )); // [15,45)
+        setAR( Math.random() - .1); // random probability for landing hits [-.1,.9)
+        setSpatt((int) ((Math.random() * 7) + 1)); // [1,8)
     }
 
     public String about() {
@@ -25,6 +25,9 @@ public class Monster extends Character{
     public void specialize() {
     	setStrength( strength + spatt );
 	setDefense( defense - spatt );
+	if (Math.random() < .5) {
+	    setStrength( strength + 10 );   //special powerup
+	}
     }
 
     public  void normalize() {
